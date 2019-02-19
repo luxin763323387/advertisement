@@ -54,6 +54,7 @@
         </dependencies>
     </dependencyManagement>
 
+    <!--定义远程仓库-->
     <repositories>
         <repository>
             <id>spring-milestones</id>

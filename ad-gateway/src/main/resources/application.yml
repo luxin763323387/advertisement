@@ -9,3 +9,15 @@ eureka:
   client:
     service-url:
       defaultZone: http://server1:8000/eureka/
+
+# prefix: /imooc所有经过网关的都有imooc这个前缀
+#routes.sponsor.path: /ad-sponsor/**  单个路由信息   path是网关实现转发ad-sponsor  -> 通过/ad-sponsor/**
+#routes.sponsor.serviceId: 是为服务的名字  指的是spring.application.name:  eureka-client-ad-sponsor
+#strip-prefix: false 不跳过前缀
+zuul:
+  prefix: /imooc
+  routes:
+    sponsor:
+      path: /ad-sponsor/**
+      serviceId: eureka-client-ad-sponsor
+      strip-prefix: false

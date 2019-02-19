@@ -13,7 +13,7 @@ public interface IAdPlanService {
     /**创建推广计划*/
     AdPlanResponse createAdPlan(AdPlanRequest request) throws AdException;
 
-    /**批量增加增加*/
+    /**批量获取*/
     List<AdPlan> getAdPlanByIdS(AdPlanGetRequest request) throws AdException;
 
     /**更新广告计划*/
