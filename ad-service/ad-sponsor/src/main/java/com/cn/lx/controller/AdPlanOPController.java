@@ -42,7 +42,7 @@ public class AdPlanOPController {
 
     //更新AdPlan
     @PutMapping("/update/adPlan")
-    public AdPlanResponse updateAdPlan(@RequestBody AdPlanRequest request) throws AdException{
+    public AdPlanResponse updateAdPlan(  AdPlanRequest request) throws AdException{
         log.info("[AdPlanOPController] -> updateAdPlan");
         JSON.toJSONString(request);
         return adPlanService.updateAdPlan(request);
