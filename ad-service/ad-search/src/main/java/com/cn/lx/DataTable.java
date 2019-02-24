@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class DateTable  implements ApplicationContextAware, PriorityOrdered {
+public class DataTable  implements ApplicationContextAware, PriorityOrdered {
 
     private static ApplicationContext applicationContext;
     private static final Map<Class, Object> dataTableMap  = new ConcurrentHashMap<>();
