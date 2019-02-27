@@ -16,6 +16,7 @@ public class BinlogRunner implements CommandLineRunner {
         this.client = client;
     }
 
+
     @Override
     public void run(String... strings) throws Exception {
 
