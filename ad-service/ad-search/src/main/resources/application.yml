@@ -7,9 +7,9 @@ spring:
   application:
     name: eureka-client-ad-search
   datasource:
-    url: jadb:mysql://127.0.0.1:3306/ad_data?autoReconnect=true
+    url: jadb:mysql://192.168.0.104:3306/ad_data?autoReconnect=true
     username: root
-    password: root
+    password: 123456
     tomcat:
       max-active: 4
       min-idle: 2
@@ -38,3 +38,12 @@ management:
     web:
       exposure:
         include: "*"
+
+adconf:
+  mysql:
+    host: 192.168.0.104
+    port: 3306
+    username: root
+    password: 123456
+    binlogName: ""
+    position: -1
