@@ -71,7 +71,7 @@ public class IndexFileLoader {
                         DConstant.AD_UNIT_DISTRICT)
         );
         adUnitDistrictStrings.forEach(p -> AdLevelDataHandler.handleLevel4(
-                JSON.parseObject(p, AdUnitDiscrtTable.class),
+                JSON.parseObject(p, AdUnitDistrictTable.class),
                 OpType.ADD
         ));
 

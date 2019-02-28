@@ -121,7 +121,7 @@ public class AdLevelDataHandler {
         );
    }
 
-   public static void handleLevel4(AdUnitDiscrtTable adUnitDiscrtTable, OpType type){
+   public static void handleLevel4(AdUnitDistrictTable adUnitDistrictTable, OpType type){
 
         //首先地域纬度不支持更新
         if(type == OpType.UPDATE){
@@ -132,20 +132,20 @@ public class AdLevelDataHandler {
         //获取当前系统的索引对象
        AdUnitObject adUnitObject = DataTable.of(
                AdUnitIndex.class
-       ).get(adUnitDiscrtTable.getUnitId());
+       ).get(adUnitDistrictTable.getUnitId());
         //如果索引不存在，不需要创建
         if(adUnitObject == null){
-            log.error("AdUnitDistrictTable index error: {}",adUnitDiscrtTable.getUnitId());
+            log.error("AdUnitDistrictTable index error: {}",adUnitDistrictTable.getUnitId());
             return;
         }
 
         //构造Key  省和市用了连字符
         String key = CommonUtils.stringConcat(
-                adUnitDiscrtTable.getProvince(),
-                adUnitDiscrtTable.getCity()
+                adUnitDistrictTable.getProvince(),
+                adUnitDistrictTable.getCity()
         );
        Set<Long> value = new HashSet<>(
-               Collections.singleton(adUnitDiscrtTable.getUnitId())
+               Collections.singleton(adUnitDistrictTable.getUnitId())
        );
        handleBingLogEvent(
                DataTable.of(UnitDistrictIndex.class),

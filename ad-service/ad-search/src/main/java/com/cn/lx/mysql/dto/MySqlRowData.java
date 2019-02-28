@@ -12,7 +12,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MysqlRowData {
+public class MySqlRowData {
 
     //表名
     private String tableName;

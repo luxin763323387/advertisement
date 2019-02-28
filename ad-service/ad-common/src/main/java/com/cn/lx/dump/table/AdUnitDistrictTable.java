@@ -8,10 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class AdUnitDiscrtTable {
+public class AdUnitDistrictTable {
 
     private Long unitId;
     private String province;
     private String city;
 
 }
+

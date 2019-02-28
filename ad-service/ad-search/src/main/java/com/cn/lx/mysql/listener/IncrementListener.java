@@ -21,14 +21,14 @@ import java.util.Map;
 @Component
 public class IncrementListener implements Ilistener {
 
-    @Resource(name = "")
+    @Resource(name = "indexSender")
     private ISender sender;
 
-    private final AggregationListerner aggregationListerner;
+  private final AggregationListener aggregationListener;
 
     @Autowired
-    public IncrementListener(AggregationListerner aggregationListerner) {
-        this.aggregationListerner = aggregationListerner;
+    public IncrementListener(AggregationListener aggregationListener) {
+        this.aggregationListener = aggregationListener;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class IncrementListener implements Ilistener {
     public void register() {
         log.info("IncrementListener register db and table info");
         Constant.table2Db.forEach((k,v) ->
-                aggregationListerner.register(v,k,this));
+                aggregationListener.register(v,k,this));
     }
 
     @Override

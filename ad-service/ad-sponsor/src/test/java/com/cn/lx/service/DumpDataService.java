@@ -230,10 +230,10 @@ public class DumpDataService {
             if(CollectionUtils.isEmpty(adUnitDistricts)){
                 return;
             }
-            List<AdUnitDiscrtTable> adUnitDiscrtTables = new ArrayList<>();
+            List<AdUnitDistrictTable> adUnitDistrcrtTables = new ArrayList<>();
             //遍历creativeUnits，转换到adCreativeUnitTables
-            adUnitDistricts.forEach(p -> adUnitDiscrtTables.add(
-                    new AdUnitDiscrtTable(
+            adUnitDistricts.forEach(p -> adUnitDistrcrtTables.add(
+                    new AdUnitDistrictTable(
                             p.getUnitId(),
                             p.getProvince(),
                             p.getCity()
@@ -242,12 +242,12 @@ public class DumpDataService {
 
             Path path = Paths.get(fileName);
             try(BufferedWriter writer = Files.newBufferedWriter(path)){
-                for(AdUnitDiscrtTable adUnitDiscrtTable : adUnitDiscrtTables){
-                    writer.write(String.valueOf(adUnitDiscrtTable));
+                for(AdUnitDistrictTable adUnitDistrictTable : adUnitDistrcrtTables){
+                    writer.write(String.valueOf(adUnitDistrictTable));
                     writer.newLine();
                 }
             } catch (IOException e) {
-                log.error("dumpAdUnitDiscrtTable error");
+                log.error("dumpAdUnitDistrictTable error");
             }
         }
 
